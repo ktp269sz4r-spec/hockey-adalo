@@ -49,11 +49,15 @@ def get_standings():
         )
 
         try:
+            print("STARTING PAGE LOAD")
+
             page.goto(
                 URL,
                 wait_until="domcontentloaded",
                 timeout=60000,
             )
+
+            print("PAGE LOADED")
 
             table = page.locator(
                 ".js-competition-table table"
