@@ -96,5 +96,5 @@ def get_standings():
         finally:
             browser.close()
 
-return data
+       return data
     
