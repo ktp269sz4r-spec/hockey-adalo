@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+import json
 from fastapi.middleware.cors import CORSMiddleware
 from playwright.sync_api import sync_playwright
 
@@ -25,19 +26,8 @@ def home():
 
 @app.get("/standings")
 def get_standings():
-
-    headers = [
-        "Position",
-        "Team",
-        "Played",
-        "Won",
-        "Drawn",
-        "Lost",
-        "For",
-        "Against",
-        "GD",
-        "Points",
-    ]
+    with open("standings.json", "r", encoding="utf-8") as file:
+        return json.load(file)
 
     data = []
 
