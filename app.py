@@ -66,6 +66,8 @@ def get_standings():
             table.locator(
                 "tbody tr"
             ).first.wait_for(timeout=60000)
+            
+            print("TABLE FOUND")
 
             for row in table.locator(
                 "tbody tr"
