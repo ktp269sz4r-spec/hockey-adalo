@@ -102,6 +102,8 @@ def get_standings():
         finally:
             browser.close()
 
+    print("READY TO RETURN", len(data), "TEAMS")
+
     return {
         "standings": data
     }
